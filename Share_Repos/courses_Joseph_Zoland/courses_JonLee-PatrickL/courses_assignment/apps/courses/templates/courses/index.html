@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Courses</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'courses/css/normalization.css' %}">
+        <link rel="stylesheet" href="{% static 'courses/css/skeleton.css' %}">
+        <link rel="stylesheet" href="{% static 'courses/css/stylesheet.css' %}">
+    </head>
+    <body>
+        <h1>Add a New Course</h1>
+        <form action="/courses" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="six columns">
+                    <label>Name: </label>
+                    <input name="name" class="u-pull-left" type="text">
+                </div>
+            </div>
+            <div class="row">
+                <div class="six columns">
+                    <label>Description: </label>
+                    <textarea name="description" rows="8" cols="60"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="offset-by-four columns">
+                    <input class="button-primary" name="add-button" type="submit" value="Add">
+                </div>
+            </div>
+        </form>
+        <table class="u-full-width">
+        <thead>
+                <tr>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Date Added</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for course in courses %}
+                    <tr>
+                        <td>{{ course.name }}</td>
+                        <td>{{ course.course_id.description }}</td>
+                        <td>{{ course.created_at }}</td>
+                        <td>
+                            <!-- <form class="comment" action="/comments">
+                                <textarea name="comment" class="comment-box" rows="8" cols="40"></textarea>
+                                <input type="submit" class="button-primary" value="Leave a comment">
+                            </form> -->
+                            <form class="delete" action="/confirmation/{{ course.id }}">
+                                <input type="submit" class="button-primary" name="delete" value="Delete">
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
