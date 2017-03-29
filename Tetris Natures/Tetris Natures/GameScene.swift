@@ -29,6 +29,8 @@ class GameScene: SKScene {
     var nextXPosition = 0
     var nextYPosition = 0
     
+    var baseXY = Int()
+    
     
     
     override init(size: CGSize) {
@@ -51,6 +53,8 @@ class GameScene: SKScene {
 //        }
         
         print ("self is \(self)")
+        
+        var baseXY = Int(self.frame.width / 6 / 2)
         
         let backgroundMusic = SKAudioNode (fileNamed: "Netherplace_Looping_Eric_Matyas.mp3")
         backgroundMusic.autoplayLooped = true
@@ -114,15 +118,13 @@ class GameScene: SKScene {
             newBlock.physicsBody?.restitution = 0
             newBlock.physicsBody?.allowsRotation = false
             newBlock.physicsBody?.affectedByGravity = true
-    
-            let baseXY = Int(self.frame.width / 6 / 2)
             
             if nextXPosition == 6 {
 //                print ("Before incrementing, \(newBlock.name) nextXposition is \(nextXPosition)")
                 nextXPosition = 1
                 nextYPosition += 1
                 newBlock.position = CGPoint(x: baseXY, y: baseXY + (nextYPosition * baseXY * 2))
-                print (newBlock.name!)
+//                print (newBlock.name!)
             }
             
             else {
@@ -139,13 +141,17 @@ class GameScene: SKScene {
         }
         
 //        for i in self.children {
-//            if i.position == CGPoint(x: baseXY + (nextXPosition * baseXY * 2), y: baseXY + (nextYPosition * baseXY * 2)) {
-////            print ("\(i.name)'s position is \(i.position)")
+//            if i.position == CGPoint(x: baseXY, y: baseXY) {
+//            print ("\(i.name)'s position is \(i.position)")
 //                print (i.name)
 //            }
 //            
 //        }
         
+        //This returns the node from the second row
+        print("node at this position is \(self.atPoint(CGPoint(x: baseXY, y: baseXY + (1 * baseXY * 2))))")
+        
+//        print ("self.children is \(self.children)")
         
         
 //        func addBlock() {
