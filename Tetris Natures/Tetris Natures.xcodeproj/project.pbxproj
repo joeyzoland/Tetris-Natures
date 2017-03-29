@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F4529EB11E89BD0A00E9C7B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4529EB01E89BD0A00E9C7B0 /* AppDelegate.swift */; };
-		F4529EB31E89BD0A00E9C7B0 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F4529EB21E89BD0A00E9C7B0 /* GameScene.sks */; };
-		F4529EB51E89BD0A00E9C7B0 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = F4529EB41E89BD0A00E9C7B0 /* Actions.sks */; };
 		F4529EB71E89BD0A00E9C7B0 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4529EB61E89BD0A00E9C7B0 /* GameScene.swift */; };
 		F4529EB91E89BD0A00E9C7B0 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4529EB81E89BD0A00E9C7B0 /* GameViewController.swift */; };
 		F4529EBC1E89BD0A00E9C7B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4529EBA1E89BD0A00E9C7B0 /* Main.storyboard */; };
@@ -21,8 +19,6 @@
 /* Begin PBXFileReference section */
 		F4529EAD1E89BD0A00E9C7B0 /* Tetris Natures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tetris Natures.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4529EB01E89BD0A00E9C7B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4529EB21E89BD0A00E9C7B0 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		F4529EB41E89BD0A00E9C7B0 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		F4529EB61E89BD0A00E9C7B0 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		F4529EB81E89BD0A00E9C7B0 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		F4529EBB1E89BD0A00E9C7B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,8 +60,6 @@
 			children = (
 				F4529EC81E89CA7D00E9C7B0 /* Netherplace_Looping_Eric_Matyas.mp3 */,
 				F4529EB01E89BD0A00E9C7B0 /* AppDelegate.swift */,
-				F4529EB21E89BD0A00E9C7B0 /* GameScene.sks */,
-				F4529EB41E89BD0A00E9C7B0 /* Actions.sks */,
 				F4529EB61E89BD0A00E9C7B0 /* GameScene.swift */,
 				F4529EB81E89BD0A00E9C7B0 /* GameViewController.swift */,
 				F4529EBA1E89BD0A00E9C7B0 /* Main.storyboard */,
@@ -136,10 +130,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4529EBC1E89BD0A00E9C7B0 /* Main.storyboard in Resources */,
-				F4529EB31E89BD0A00E9C7B0 /* GameScene.sks in Resources */,
 				F4529EBE1E89BD0A00E9C7B0 /* Assets.xcassets in Resources */,
 				F4529EC11E89BD0A00E9C7B0 /* LaunchScreen.storyboard in Resources */,
-				F4529EB51E89BD0A00E9C7B0 /* Actions.sks in Resources */,
 				F4529EC91E89CA7D00E9C7B0 /* Netherplace_Looping_Eric_Matyas.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +309,7 @@
 				F4529EC71E89BD0A00E9C7B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
