@@ -120,16 +120,13 @@ class GameScene: SKScene {
             newBlock.physicsBody?.affectedByGravity = true
             
             if nextXPosition == 6 {
-//                print ("Before incrementing, \(newBlock.name) nextXposition is \(nextXPosition)")
                 nextXPosition = 1
                 nextYPosition += 1
                 newBlock.position = CGPoint(x: baseXY, y: baseXY + (nextYPosition * baseXY * 2))
-//                print (newBlock.name!)
             }
             
             else {
                 newBlock.position = CGPoint(x: baseXY + (nextXPosition * baseXY * 2), y: baseXY + (nextYPosition * baseXY * 2))
-//                print ("Before incrementing, \(newBlock.name) nextXposition is \(nextXPosition)")
                 nextXPosition += 1
             }
             
@@ -148,8 +145,80 @@ class GameScene: SKScene {
 //            
 //        }
         
+        func checkCombos() {
+            
+            var selectNextXPosition = 0
+            var selectNextYPosition = 0
+            var count = Int()
+            
+            //Note: 65 is chosen arbitrarily, as it seems like there is room for 65 blocks on the scree
+            
+            for _ in 0...65 {
+                
+                let current = (self.atPoint(CGPoint(x: baseXY + (selectNextXPosition * baseXY * 2), y: baseXY + (selectNextYPosition * baseXY * 2))))
+                
+                
+                
+                //Resets the count at the beginning of the x check
+                count = 1
+                //Checks for x coordinate matches, as x is incremented by "selectNextxPosition + i"
+                for i in 1...5 {
+                    if (self.atPoint(CGPoint(x: baseXY + ((selectNextXPosition + i) * baseXY * 2), y: baseXY + (selectNextYPosition * baseXY * 2)))).name == current.name && current.name != nil {
+                        count += 1
+                    }
+                    else {
+                        break
+                    }
+                }
+                //If there's a match of at least 3 similar blocks along the x axis, print it
+                if count >= 3 {
+                    print ("\(current.name) at position \(current.position) x match of \(count)!")
+                }
+
+                
+                //Resets the count at the beginning of the y check
+                count = 1
+                //Checks for y coordinate matches, as y is incremented by "selectNextYPosition + i"
+                for i in 1...5 {
+                    if (self.atPoint(CGPoint(x: baseXY + (selectNextXPosition * baseXY * 2), y: baseXY + ((selectNextYPosition + i) * baseXY * 2)))).name == current.name && current.name != nil {
+                        count += 1
+                    }
+                    else {
+                        break
+                    }
+                }
+                //If there's a match of at least 3 similar blocks along the y axis, print it
+                if count >= 3 {
+                    print ("\(current.name) at position \(current.position) y match of \(count)!")
+                }
+            
+                
+                
+                if selectNextXPosition == 5 {
+                    selectNextXPosition = 0
+                    selectNextYPosition += 1
+//                    print("selectNextXPosition is \(selectNextXPosition)")
+//                    print("selectNextYPosition is \(selectNextYPosition)")
+//                    print("node at this position is \(self.atPoint(CGPoint(x: baseXY, y: baseXY + (selectNextYPosition * baseXY * 2))))")
+
+                }
+                
+                else {
+//                    print("selectNextXPosition is \(selectNextXPosition)")
+//                    print("selectNextYPosition is \(selectNextYPosition)")
+//                    print("node at this position is \(self.atPoint(CGPoint(x: baseXY + (selectNextXPosition * baseXY * 2), y: baseXY + (selectNextYPosition *  baseXY * 2))))")
+                    selectNextXPosition += 1
+                }
+            }
+        }
+        
+        checkCombos()
+        
+        
         //This returns the node from the second row
-        print("node at this position is \(self.atPoint(CGPoint(x: baseXY, y: baseXY + (1 * baseXY * 2))))")
+        //print("node at this position is \(self.atPoint(CGPoint(x: baseXY, y: baseXY + (1 * baseXY * 2))))")
+        
+        
         
 //        print ("self.children is \(self.children)")
         
